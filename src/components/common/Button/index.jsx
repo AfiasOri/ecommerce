@@ -2,8 +2,8 @@ import React from 'react';
 
 import './Button.scss';
 
-export const Button = ({ children, ...rest }) => (
-	<button className='button' {...rest}>
+export const Button = ({ children, provider, ...rest }) => (
+	<button className={`${provider ? provider : ''} button`} {...rest}>
 		{children}
 	</button>
 );

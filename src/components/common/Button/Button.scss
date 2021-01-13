@@ -1,5 +1,5 @@
 .button {
-	min-width: 165px;
+	min-width: 140px;
 	width: auto;
 	height: 50px;
 	letter-spacing: 0.5px;
@@ -20,5 +20,21 @@
 		border: 1px solid black;
 		transition: background-color 0.3s linear;
 		// transition: color 0.5s ease;
+	}
+
+	&.google {
+		background-color: #ea4335;
+
+		&:hover {
+			background-color: #fff;
+		}
+	}
+
+	&.github {
+		background-color: #333;
+
+		&:hover {
+			background-color: #fff;
+		}
 	}
 }

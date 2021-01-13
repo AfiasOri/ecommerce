@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import Button from '../common/Button';
-import Input from '../common/Input';
 
 import './SignIn.scss';
+
+import Button from '../common/Button';
+import Input from '../common/Input';
+import { signInWithCredentials, signInWithGithub, signInWithGoogle } from '../../backend/auth';
 
 const INITIAL_STATE = { email: '', password: '' };
 
 export class SignIn extends Component {
 	state = INITIAL_STATE;
 
-	handleSubmit = e => {
+	handleSubmit = async e => {
 		e.preventDefault();
+		await signInWithCredentials(this.state.email, this.state.password);
 		this.setState(INITIAL_STATE);
 	};
 
@@ -43,8 +46,15 @@ export class SignIn extends Component {
 						required
 						onChange={this.handleChange}
 					/>
-
-					<Button type='submit'>Submit</Button>
+					<div className='buttons'>
+						<Button type='submit'>Submit</Button>
+						<Button type='button' onClick={signInWithGithub} provider='github'>
+							GitHub
+						</Button>
+						<Button type='button' onClick={signInWithGoogle} provider='google'>
+							Google
+						</Button>
+					</div>
 				</form>
 			</div>
 		);
