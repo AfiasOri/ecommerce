@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { CollectionPreview } from '../../components/CollectionPreview';
 
 import './Shop.scss';
 import collections from '../../mock/collections';
+import { CollectionPreview } from '../../components/CollectionPreview';
 
 export class ShopPage extends Component {
 	state = {

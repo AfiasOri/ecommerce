@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 import './SignIn.scss';
-
+import { signInWithCredentials, signInWithGithub, signInWithGoogle } from '../../firebase/auth';
 import Button from '../common/Button';
 import Input from '../common/Input';
-import { signInWithCredentials, signInWithGithub, signInWithGoogle } from '../../backend/auth';
 
 const INITIAL_STATE = { email: '', password: '' };
 

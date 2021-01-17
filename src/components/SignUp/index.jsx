@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { createUserDoc, signUpWithCredentials } from '../../backend/auth';
-
 import './SignUp.scss';
+import { createUserDoc, signUpWithCredentials } from '../../firebase/auth';
 import { Input, Button } from '../common';
 
 const INITIAL_STATE = {

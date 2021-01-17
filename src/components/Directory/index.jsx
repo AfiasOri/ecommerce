@@ -1,11 +1,8 @@
 import React from 'react';
-import './Directory.scss';
 
+import './Directory.scss';
 import sections from '../../mock/directory';
 import MenuItem from '../MenuItem';
-
-// export const Directory = ({ children }) => <div className='directory-menu'>{children}</div>;
-
 export class Directory extends React.Component {
 	state = {
 		sections,

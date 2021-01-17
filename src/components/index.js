@@ -1,9 +1,8 @@
 export { Directory } from './Directory';
 export { MenuItem } from './MenuItem';
 export { CollectionPreview } from './CollectionPreview';
-export { CollectionItem } from './CollectionItem';
 
-export { Header } from './Header';
+export { CartItem } from './CartItem';
 
 export { SignIn } from './SignIn';
 export { SignUp } from './SignUp';
