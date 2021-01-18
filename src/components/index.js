@@ -1,4 +1,3 @@
-export { Directory } from './Directory';
 export { MenuItem } from './MenuItem';
 export { CollectionPreview } from './CollectionPreview';
 

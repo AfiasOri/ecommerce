@@ -8,7 +8,8 @@ import { selectCurrentUser } from './redux/selectors/userSelectors';
 
 import './App.css';
 import { createUserDoc, onAuthChange } from './firebase/auth';
-import { HomePage, ShopPage, SignInSignUp } from './pages';
+import { HomePage, SignInSignUp } from './pages';
+import ShopPage from './pages/Shop';
 import Checkout from './pages/Checkout';
 import Header from './components/Header';
 

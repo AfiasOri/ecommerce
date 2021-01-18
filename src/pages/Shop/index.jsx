@@ -1,19 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './Shop.scss';
-import collections from '../../mock/collections';
-import { CollectionPreview } from '../../components/CollectionPreview';
+import CollectionsOverview from '../../components/CollectionsOverview';
 
-export class ShopPage extends Component {
-	state = {
-		collections,
-	};
-
-	render() {
-		const { collections } = this.state;
-		const renderCollections = collections.map(({ id, ...rest }) => <CollectionPreview key={id} {...rest} />);
-		return <div className='shop'>{renderCollections}</div>;
-	}
-}
+const ShopPage = ({ collections }) => (
+	<div className='shop'>
+		<CollectionsOverview />
+	</div>
+);
 
 export default ShopPage;
