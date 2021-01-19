@@ -8,7 +8,6 @@ import './Checkout.scss';
 import CheckoutItem from '../../components/CheckoutItem';
 
 export const Checkout = ({ cartItems, total }) => {
-	console.log(cartItems);
 	const items = cartItems.map(item => <CheckoutItem key={item.id} item={item} />);
 
 	return (

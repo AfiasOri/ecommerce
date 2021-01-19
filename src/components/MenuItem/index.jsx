@@ -6,7 +6,6 @@ import './MenuItem.scss';
 export const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => {
 	const handleClick = () => {
 		const url = match.url === '/' ? match.url : `${match.url}/`;
-		console.log(`${url}${linkUrl}`);
 		history.push(`${url}${linkUrl}`);
 	};
 	return (
