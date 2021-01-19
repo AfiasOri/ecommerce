@@ -6,6 +6,7 @@ import { selectCartItems, selectCartTotalPrice } from '../../redux/selectors/car
 
 import './Checkout.scss';
 import CheckoutItem from '../../components/CheckoutItem';
+import StripeCheckoutButton from '../../components/StripeButton';
 
 export const Checkout = ({ cartItems, total }) => {
 	const items = cartItems.map(item => <CheckoutItem key={item.id} item={item} />);
@@ -32,6 +33,9 @@ export const Checkout = ({ cartItems, total }) => {
 			{items}
 			<div className='total'>
 				<span>TOTAL: ${total}</span>
+			</div>
+			<div className='pay-now'>
+				<StripeCheckoutButton price={total} />
 			</div>
 		</div>
 	);
