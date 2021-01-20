@@ -7,8 +7,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCartItems } from '../../redux/selectors/cartSelectors';
 import { toggleCartHidden } from '../../redux/actions/cartActions';
 
-import './CartDropdown.scss';
-import { Button } from '../common';
+import { CartDropdownContainer, CartItemsContainer, CheckoutButton, EmptyCart } from './CartDropdown.styles';
 import { CartItem } from '../CartItem';
 
 const CartDropdown = ({ hidden, cartItems, history, toggleCartHidden }) => {
@@ -17,13 +16,13 @@ const CartDropdown = ({ hidden, cartItems, history, toggleCartHidden }) => {
 		history.push('/checkout');
 	};
 	const renderItems = cartItems.map(({ id, ...rest }) => <CartItem key={id} {...rest} />);
-	const emptyCart = <span className='empty'>Your Cart Is Empty</span>;
+	const emptyCart = <EmptyCart>Your Cart Is Empty</EmptyCart>;
 
 	return (
-		<div className={`${hidden ? 'hidden' : ''} cart-dropdown `}>
-			<div className='cart-items'>{cartItems.length ? renderItems : emptyCart}</div>
-			<Button onClick={handleCheckout}>CHECKOUT</Button>
-		</div>
+		<CartDropdownContainer hidden={hidden}>
+			<CartItemsContainer>{cartItems.length ? renderItems : emptyCart}</CartItemsContainer>
+			<CheckoutButton onClick={handleCheckout}>CHECKOUT</CheckoutButton>
+		</CartDropdownContainer>
 	);
 };
 

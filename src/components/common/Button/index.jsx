@@ -1,11 +1,7 @@
 import React from 'react';
 
-import './Button.scss';
+import { StyledButton } from './Button.styles';
 
-export const Button = ({ children, provider, inverted, ...rest }) => (
-	<button className={`${provider ? provider : ''} ${inverted ? 'inverted' : ''} button`} {...rest}>
-		{children}
-	</button>
-);
+export const Button = ({ children, ...rest }) => <StyledButton {...rest}>{children}</StyledButton>;
 
 export default Button;

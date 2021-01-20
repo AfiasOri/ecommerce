@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './SignUp.scss';
 import { createUserDoc, signUpWithCredentials } from '../../firebase/auth';
+
+import { SignUpContainer, Title } from './SignUp.styles';
 import { Input, Button } from '../common';
 
 const INITIAL_STATE = {
@@ -39,10 +40,10 @@ export class SignUp extends React.Component {
 	render() {
 		const { email, displayName, password, confirmPassword } = this.state;
 		return (
-			<div className='sign-up'>
-				<h2 className='title'>I do not have an account</h2>
+			<SignUpContainer>
+				<Title>I do not have an account</Title>
 				<span>Sign up with email and password</span>
-				<form onSubmit={this.handleSubmit} className='sign-up-form'>
+				<form onSubmit={this.handleSubmit}>
 					<Input
 						type='text'
 						label='Display Name'
@@ -79,7 +80,7 @@ export class SignUp extends React.Component {
 						SIGN UP
 					</Button>
 				</form>
-			</div>
+			</SignUpContainer>
 		);
 	}
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import './MenuItem.scss';
+// import './MenuItem.scss';
+import { BackgroundImage, Title, Content, MenuItemContainer, Subtitle } from './MenuItem.styles';
 
 export const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => {
 	const handleClick = () => {
@@ -9,13 +10,13 @@ export const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => 
 		history.push(`${url}${linkUrl}`);
 	};
 	return (
-		<div className={`${size} menu-item`} onClick={handleClick}>
-			<div className='background-image' style={{ backgroundImage: `url(${imageUrl})` }} />
-			<div className='content'>
-				<div className='title'>{title.toUpperCase()}</div>
-				<span className='subtitle'>SHOP NOW</span>
-			</div>
-		</div>
+		<MenuItemContainer size={size} onClick={handleClick}>
+			<BackgroundImage className='background' imageUrl={imageUrl} />
+			<Content>
+				<Title>{title.toUpperCase()}</Title>
+				<Subtitle>SHOP NOW</Subtitle>
+			</Content>
+		</MenuItemContainer>
 	);
 };
 

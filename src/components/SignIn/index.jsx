@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 
-import './SignIn.scss';
 import { signInWithCredentials, signInWithGithub, signInWithGoogle } from '../../firebase/auth';
+
+import { ButtonsContainer, Title, SignInContainer } from './SignIn.styles';
 import Button from '../common/Button';
 import Input from '../common/Input';
 
 const INITIAL_STATE = { email: '', password: '' };
 
+const SignInInput = ({ label, value, onChange }) => (
+	<Input
+		label={label}
+		name={label.toLowerCase()}
+		type={label.toLowerCase()}
+		value={value}
+		required
+		onChange={onChange}
+	/>
+);
 export class SignIn extends Component {
 	state = INITIAL_STATE;
 
@@ -23,29 +34,15 @@ export class SignIn extends Component {
 	render() {
 		const { email, password } = this.state;
 		return (
-			<div className='sign-in'>
-				<h2>I already have an account</h2>
+			<SignInContainer>
+				<Title>I already have an account</Title>
 				<span>Sign in with email and password</span>
 
 				<form onSubmit={this.handleSubmit}>
-					<Input
-						label='Email'
-						type='email'
-						name='email'
-						value={email}
-						required
-						onChange={this.handleChange}
-					/>
+					<SignInInput label='Email' value={email} onChange={this.handleChange} />
 
-					<Input
-						label='Password'
-						type='password'
-						name='password'
-						value={password}
-						required
-						onChange={this.handleChange}
-					/>
-					<div className='buttons'>
+					<SignInInput label='Password' value={password} onChange={this.handleChange} />
+					<ButtonsContainer>
 						<Button type='submit'>Submit</Button>
 						<Button type='button' onClick={signInWithGithub} provider='github'>
 							GitHub
@@ -53,9 +50,9 @@ export class SignIn extends Component {
 						<Button type='button' onClick={signInWithGoogle} provider='google'>
 							Google
 						</Button>
-					</div>
+					</ButtonsContainer>
 				</form>
-			</div>
+			</SignInContainer>
 		);
 	}
 }
