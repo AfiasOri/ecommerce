@@ -11,7 +11,7 @@ import { signOut } from '../../firebase/auth';
 import CartIcon from '../CartIcon';
 import CartDropdown from '../CartDropdown';
 
-const Header = ({ currentUser, hidden, totalItems }) => {
+const Header = ({ currentUser, hidden }) => {
 	const authOption = currentUser ? (
 		<Option onClick={signOut}>SIGN OUT</Option>
 	) : (

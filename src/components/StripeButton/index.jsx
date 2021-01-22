@@ -11,7 +11,6 @@ const StripeButton = ({ price, clearCart }) => {
 		'pk_test_51IBQq0IrWo20wJiQgplqm6dD1OKe5NgaY4JnU3Isb0bbAXMvIgOzYgFBDfJXMwIfUjyboEwk8zLwTl7NF4PMtIbW00zvqPqtk4';
 
 	const handleToken = token => {
-		console.log(token);
 		clearCart();
 		alert('Payment recieved');
 	};

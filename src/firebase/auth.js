@@ -1,7 +1,4 @@
-import firebase from './firebase';
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+import firebase, { auth, firestore } from './firebase';
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 const githubProvider = new firebase.auth.GithubAuthProvider();

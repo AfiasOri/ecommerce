@@ -6,3 +6,5 @@ export const ITEMS_IN_CART = 'ITEMS_IN_CART';
 export const CLEAR_ITEM_FROM_CART = 'CLEAR_ITEM_FROM_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const CLEAR_CART = 'CLEAR_CART';
+
+export const UPDATE_COLLECTIONS = 'UPDATE_COLLECTIONS';
